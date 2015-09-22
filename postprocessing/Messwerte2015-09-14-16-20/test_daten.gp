@@ -155,7 +155,7 @@ set psdir
 set fit noerrorvariables
 GNUTERM = "wxt"
 plot 'Messwerte_m.txt' with lines
-set term pngcairo
+set term png
 set output "Messwerte_m.png"
 replot
 #    EOF

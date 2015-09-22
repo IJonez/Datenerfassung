@@ -45,7 +45,7 @@ for line in fobj_in:
             #print('ifverzweigung')
             line = str(line)
             ausgabe = str(zwokompdez(line))
-            Moment = (float(ausgabe) / 8388608) *4.27*10**(-10)* 70*10**9*0.06/0.07/0.004
+            Moment = float(ausgabe) * 0.00037216558669
             
             print(str(ausgabe))
             fobj_out_dez.write(str(ausgabe) +'\n')
