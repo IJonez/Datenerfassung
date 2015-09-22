@@ -31,9 +31,9 @@ def zwokompdez(a):
             a =- a
             return(a)
 
-fobj_in = open('Messwerte_roh.txt')
-fobj_out_m = open('Messwerte_m' + 'txt',"w")
-fobj_out_dez = open('Messwerte_dez' + 'txt',"w")
+fobj_in = open('Messwerte.txt')
+fobj_out_m = open('Messwerte_m' + '.txt',"w")
+fobj_out_dez = open('Messwerte_dez' + '.txt',"w")
 n = 1
 
 for line in fobj_in:

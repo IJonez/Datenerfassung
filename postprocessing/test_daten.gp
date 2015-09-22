@@ -154,5 +154,8 @@ set fontpath
 set psdir
 set fit noerrorvariables
 GNUTERM = "wxt"
-plot 'daten.txt' with lines
+plot 'Messwerte_m.txt' with lines
+set term pngcairo
+set output "Messwerte_m.png"
+replot
 #    EOF
