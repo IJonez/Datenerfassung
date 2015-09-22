@@ -1,0 +1,37 @@
+import RPi.GPIO as GPIO
+import time
+GPIO.setmode(GPIO.BOARD)
+
+GPIO.setup(16, GPIO.OUT)
+GPIO.setup(18, GPIO.OUT)
+GPIO.setup(22, GPIO.IN)
+p = GPIO.PWM(16,50)
+
+p.start(0)
+
+
+try:
+    while True:
+        try:
+            dutycycle = float(input('Drehzahl? \n'))
+            if dutycycle < 0:
+                GPIO.output(18, GPIO.HIGH)
+                duytycycle = abs(dutycycle)
+            else: 
+                GPIO.output(18, GPIO.LOW)
+            if GPIO.input(22) == HIGH:
+                print('stk fault')                
+                exit()
+
+       
+        except KeyboardInterrupt:
+            GPIO.cleanup()
+        else:
+            p.ChangeDutyCycle(dutycycle)
+        
+except KeyboardInterrupt:
+           pass
+p.stop()
+GPIO.cleanup
+           
+                   
