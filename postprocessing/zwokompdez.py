@@ -34,7 +34,7 @@ def zwokompdez(a):
 fobj_in = open('Messwerte_roh.txt')
 fobj_out_m = open('Messwerte_m' + 'txt',"w")
 fobj_out_dez = open('Messwerte_dez' + 'txt',"w")
-i = 1
+n = 1
 
 for line in fobj_in:
     #print('for_schleife')
@@ -42,14 +42,14 @@ for line in fobj_in:
     if n > 3:
 	
         if len(line) >= 1:
-		  	#print('ifverzweigung')
-			line = str(line)
-			ausgabe = str(zwokompdez(line))
-			Moment = (float(ausgabe) / 8388608) *4.27*10**(-10)* 70*10**9*0.06/0.07/0.004)
-			
-			print(str(ausgabe))
-			fobj_out_dez.write(str(ausgabe) +'\n')
-			fobj_out_m.write(str(Moment) + '\n')		
+            #print('ifverzweigung')
+            line = str(line)
+            ausgabe = str(zwokompdez(line))
+            Moment = (float(ausgabe) / 8388608) *4.27*10**(-10)* 70*10**9*0.06/0.07/0.004
+            
+            print(str(ausgabe))
+            fobj_out_dez.write(str(ausgabe) +'\n')
+            fobj_out_m.write(str(Moment) + '\n')		
     n += 1
 
 
